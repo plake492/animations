@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import logo from '../logo.svg'
 
 export const Route = createFileRoute('/')({
@@ -14,25 +14,31 @@ function App() {
           className="h-[40vmin] pointer-events-none animate-[spin_20s_linear_infinite]"
           alt="logo"
         />
-        <p>
-          Edit <code>src/routes/index.tsx</code> and save to reload.
-        </p>
-        <a
-          className="text-[#61dafb] hover:underline"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <p className="mb-6">Welcome to the MCP Motion Animation Demo</p>
+        <Link
+          to="/demo"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 mb-6 inline-block text-lg"
         >
-          Learn React
-        </a>
-        <a
-          className="text-[#61dafb] hover:underline"
-          href="https://tanstack.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn TanStack
-        </a>
+          View Animation Demo
+        </Link>
+        <div className="space-y-2">
+          <a
+            className="text-[#61dafb] hover:underline block"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+          <a
+            className="text-[#61dafb] hover:underline block"
+            href="https://tanstack.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn TanStack
+          </a>
+        </div>
       </header>
     </div>
   )

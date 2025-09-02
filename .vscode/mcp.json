@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "local_github": {
+      "type": "http",
+      "url": "http://localhost:5000"
+    }
+  }
+}
