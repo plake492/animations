@@ -23,6 +23,12 @@ export default function Header() {
           >
             Physics Demo
           </Link>
+          <Link
+            to="/parallax"
+            className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
+          >
+            Parallax Demo
+          </Link>
         </div>
         <div className="text-sm text-gray-500">
           Powered by MCP Motion Server

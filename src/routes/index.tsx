@@ -15,7 +15,7 @@ function App() {
           alt="logo"
         />
         <p className="mb-6">Welcome to the MCP Motion Animation Demo</p>
-        <div className="space-x-4 mb-6">
+        <div className="space-x-4 mb-6 flex flex-wrap justify-center gap-4">
           <Link
             to="/demo"
             className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 inline-block text-lg"
@@ -27,6 +27,12 @@ function App() {
             className="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 inline-block text-lg"
           >
             Physics Demo
+          </Link>
+          <Link
+            to="/parallax"
+            className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 inline-block text-lg"
+          >
+            Parallax Demo
           </Link>
         </div>
         <div className="space-y-2">

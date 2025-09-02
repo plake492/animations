@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PhysicsRouteImport } from './routes/physics'
+import { Route as ParallaxRouteImport } from './routes/parallax'
 import { Route as DemoRouteImport } from './routes/demo'
 import { Route as IndexRouteImport } from './routes/index'
 
 const PhysicsRoute = PhysicsRouteImport.update({
   id: '/physics',
   path: '/physics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParallaxRoute = ParallaxRouteImport.update({
+  id: '/parallax',
+  path: '/parallax',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemoRoute = DemoRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/demo': typeof DemoRoute
+  '/parallax': typeof ParallaxRoute
   '/physics': typeof PhysicsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/demo': typeof DemoRoute
+  '/parallax': typeof ParallaxRoute
   '/physics': typeof PhysicsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/demo': typeof DemoRoute
+  '/parallax': typeof ParallaxRoute
   '/physics': typeof PhysicsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/demo' | '/physics'
+  fullPaths: '/' | '/demo' | '/parallax' | '/physics'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/demo' | '/physics'
-  id: '__root__' | '/' | '/demo' | '/physics'
+  to: '/' | '/demo' | '/parallax' | '/physics'
+  id: '__root__' | '/' | '/demo' | '/parallax' | '/physics'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DemoRoute: typeof DemoRoute
+  ParallaxRoute: typeof ParallaxRoute
   PhysicsRoute: typeof PhysicsRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/physics'
       fullPath: '/physics'
       preLoaderRoute: typeof PhysicsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parallax': {
+      id: '/parallax'
+      path: '/parallax'
+      fullPath: '/parallax'
+      preLoaderRoute: typeof ParallaxRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DemoRoute: DemoRoute,
+  ParallaxRoute: ParallaxRoute,
   PhysicsRoute: PhysicsRoute,
 }
 export const routeTree = rootRouteImport
