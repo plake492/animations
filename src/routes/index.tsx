@@ -15,12 +15,20 @@ function App() {
           alt="logo"
         />
         <p className="mb-6">Welcome to the MCP Motion Animation Demo</p>
-        <Link
-          to="/demo"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 mb-6 inline-block text-lg"
-        >
-          View Animation Demo
-        </Link>
+        <div className="space-x-4 mb-6">
+          <Link
+            to="/demo"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 inline-block text-lg"
+          >
+            View Animation Demo
+          </Link>
+          <Link
+            to="/physics"
+            className="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 inline-block text-lg"
+          >
+            Physics Demo
+          </Link>
+        </div>
         <div className="space-y-2">
           <a
             className="text-[#61dafb] hover:underline block"
