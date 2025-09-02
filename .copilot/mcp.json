@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "git_dev_server": {
+      "url": "http://localhost:5000"
+    }
+  },
+  "context": {
+    "sources": [
+      {
+        "server": "mcpServers",
+        "endpoint": "/initialize"
+      }
+    ]
+  }
+}
