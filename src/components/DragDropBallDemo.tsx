@@ -1,5 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 
+// Interactive physics demo with real-time parameter controls
 interface Position {
   x: number
   y: number
